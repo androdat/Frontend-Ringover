@@ -1,0 +1,114 @@
+.ringoversalesforce {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  width: 730px;
+  height: 506px;
+  border: 0.612859px solid #e7ebff;
+  border-radius: 15px;
+  margin: 0 auto;
+}
+
+.ringover {
+  width: 500px;
+  height: 506px;
+  background: rgba(91, 107, 225, 0.04);
+}
+
+.salesforce {
+  width: 230px;
+  height: 506px;
+}
+
+.heading-txt {
+  margin: 0 auto;
+  margin-top: 12px;
+}
+.heading-txt p {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  color: #394759;
+  padding: 0;
+  margin: 0;
+}
+
+.heading-txt-inside {
+  margin: 0 auto;
+  margin-top: 12px;
+}
+.heading-txt-inside p {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #394759;
+  padding: 0;
+  margin: 0;
+}
+
+.search-bar {
+  margin-top: 12px;
+  height: 40px;
+}
+
+.fields {
+  border: solid 2px black;
+  width: 95%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.fields::-webkit-scrollbar {
+  /* WebKit */
+  width: 0;
+  height: 0;
+}
+
+.ringover-fields {
+  border: solid 2px rgb(218, 67, 67);
+  width: 50%;
+  height: 400px;
+}
+
+.salesforce-fields {
+  border: solid 2px rgb(24, 162, 77);
+  width: 50%;
+  height: 400px;
+}
+
+.list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 12px;
+}
+
+.list-item {
+  padding-top: 4%;
+}
+
+.rf-filed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 8px;
+  padding: 3%;
+}
+.rf-filed p {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #5B6BE1;
+}/*# sourceMappingURL=ringoversalesforce.css.map */
