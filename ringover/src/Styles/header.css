@@ -1,0 +1,81 @@
+.parent {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-txt {
+  display: flex;
+  flex-direction: column;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  align-items: center;
+  justify-content: center;
+}
+.header-txt p {
+  padding: 0;
+  margin: 0;
+  padding-top: 1%;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #394759;
+  text-align: left;
+}
+
+.mf {
+  display: flex;
+  align-items: center;
+  width: -webkit-fill-available;
+}
+.mf p {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  color: #394759;
+  margin: 0;
+  padding: 0;
+  margin-left: 2%;
+  color: #394759;
+}
+
+.button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.button p {
+  margin: 0;
+  padding: 0;
+  margin-left: 4%;
+  text-align: left;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+}
+.button div {
+  min-width: -webkit-fill-available;
+}
+
+.small {
+  font-family: "Open Sans" !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 10px !important;
+  color: #394759 !important;
+}
+
+.button-parent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 45%;
+  flex-wrap: wrap;
+}/*# sourceMappingURL=Header.css.map */
