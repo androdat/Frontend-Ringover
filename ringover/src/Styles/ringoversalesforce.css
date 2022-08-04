@@ -48,11 +48,6 @@
   margin: 0;
 }
 
-.search-bar {
-  margin-top: 12px;
-  height: 40px;
-}
-
 .fields {
   border: solid 2px black;
   width: 95%;
@@ -101,7 +96,10 @@
   justify-content: center;
   background-color: white;
   border-radius: 8px;
-  padding: 3%;
+  height: 19px;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 2%;
 }
 .rf-filed p {
   margin: 0;
@@ -110,5 +108,147 @@
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  color: #5B6BE1;
+  color: #5b6be1;
+}
+
+.rf-filed-new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(91, 107, 225, 0.15);
+  border-radius: 8px;
+  height: 19px;
+  padding: 10px;
+  background-color: res;
+  margin: 0 auto;
+  margin-top: 2%;
+}
+.rf-filed-new p {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #5b6be1;
+}
+
+.sf-fields {
+  border: solid 2px rgb(218, 67, 67);
+  width: 100%;
+  height: 400px;
+}
+
+.sf-filed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(91, 107, 225, 0.15);
+  border-radius: 8px;
+  width: 188px;
+  padding: 8px;
+}
+.sf-filed p {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #5b6be1;
+}
+
+.lettering {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  /* Light Blue */
+  color: #567191;
+}
+
+.wd {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+
+.search-bar {
+  height: 40px;
+  margin: 0 auto;
+  margin-top: 12px;
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 7%;
+  top: 19%;
+}
+
+.delete-icon {
+  position: absolute;
+  left: 86%;
+  top: 19%;
+  cursor: pointer;
+}
+
+.input {
+  width: 61%;
+  height: 22px;
+  border: 1px solid #dadce0;
+  border-radius: 15px;
+  transition: 0.3s all;
+  padding: 3px;
+  padding-left: 14%;
+  padding-right: 20%;
+  margin: 0 auto;
+}
+.input:focus {
+  outline: none;
+  border: 1px solid #5b6be1 !important;
+}
+.input:focus .delete-icon {
+  display: none !important;
+}
+
+.input-lg {
+  width: 68%;
+  height: 22px;
+  border: 1px solid #dadce0;
+  border-radius: 15px;
+  transition: 0.3s all;
+  padding: 3px;
+  padding-left: 7%;
+  padding-right: 20%;
+  margin: 0 auto;
+}
+.input-lg:focus {
+  outline: none;
+  border: 1px solid #5b6be1 !important;
+}
+.input-lg:focus .delete-icon {
+  display: none !important;
+}
+
+.search-icon-lg {
+  position: absolute;
+  left: 5%;
+  top: 19%;
+}
+
+.delete-icon-lg {
+  position: absolute;
+  left: 92%;
+  top: 19%;
+  cursor: pointer;
+}
+
+.sf-dropable {
+  width: 100%;
+  height: 100%;
 }/*# sourceMappingURL=ringoversalesforce.css.map */
