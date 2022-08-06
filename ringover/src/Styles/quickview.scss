@@ -7,6 +7,7 @@
   height: 580px;
 
   margin: 0 auto;
+  // margin-top: 2%;
 
   background: #ffffff;
   border-radius: 15px;
@@ -81,4 +82,20 @@
     color: #394759;
     margin-left: 1%;
   }
+}
+.quickview-img {
+  width: 400px;
+}
+
+.qv-hover>* {
+  // background: #f0f8fe !important;
+  // mix-blend-mode: lighten !important;
+  filter: blur(2px) !important;
+  
+}
+.grow {
+  transform: scale(2.1) !important;
+  z-index: 10 !important;
+  opacity: 1 !important;
+  filter: blur(0) !important;
 }

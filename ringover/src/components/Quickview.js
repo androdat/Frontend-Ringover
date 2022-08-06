@@ -1,3 +1,5 @@
+import React, { useRef, useState, useEffect, useContext } from "react";
+import { MyContext } from "../contexts/MyContext";
 import "../Styles/quickview.css";
 import quickview from "../images/quickview.png";
 import {
@@ -9,12 +11,44 @@ import {
   IoGlobeOutline,
   IoMail,
   IoPhonePortrait,
-  IoBagRemoveSharp
+  IoBagRemoveSharp,
 } from "react-icons/io5";
-
+var id = "";
 const Quickview = () => {
+  const { highlightId } = useContext(MyContext);
+  useEffect(() => {
+    console.log("Use Effect called from quickview");
+    //  document.getElementById(highlightId).style.display = "none";
+    highlight();
+  });
+
+  const highlight = () => {
+    console.log("highlight called9999999");
+
+    if (highlightId != "" && highlightId != "revert") {
+      console.log("***************************************");
+      console.log("toggle");
+      document.getElementById("qv").classList.toggle("qv-hover");
+      id = highlightId;
+         document.getElementById(highlightId).classList.toggle("grow");
+    }
+    if (highlightId == "revert") {
+      document.getElementById("qv").classList.toggle("qv-hover");
+       document.getElementById(id).classList.toggle("grow");
+      console.log(id);
+    }
+    // if (highlightId == "revert") {
+    //   console.log("revert");
+    //   const elem = document.getElementById("qv");
+    //   const list = elem.classList;
+    //   list.remove("qv-hover");
+    //   console.log(globalelem)
+    //   // myelement.remove("grow");
+    // }
+  };
   return (
-    <div className="quickview">
+    <div id="qv" className="quickview">
+      {highlightId}
       <div className="static-buttons-parents">
         <div className="static-buttons">
           <p>Status</p>
@@ -30,7 +64,7 @@ const Quickview = () => {
         </div>
       </div>
       <div className="social-icons-parent">
-        <IoLogoLinkedin size={32} color="#0077B7" />
+        <IoLogoLinkedin id="Linkedin URL" size={32} color="#0077B7" />
         <IoLinkSharp size={32} color="#567191" />
       </div>
       <div className="text">
@@ -50,7 +84,7 @@ const Quickview = () => {
         <p>primary_phone</p>
       </div>
 
-      <img src={quickview} />
+      <img className="quickview-img" src={quickview} />
     </div>
   );
 };

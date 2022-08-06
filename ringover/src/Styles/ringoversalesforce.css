@@ -6,7 +6,7 @@
   height: 506px;
   border: 0.612859px solid #e7ebff;
   border-radius: 15px;
-  margin: 0 auto;
+  margin-left: 6%;
 }
 
 .ringover {
@@ -49,7 +49,6 @@
 }
 
 .fields {
-  border: solid 2px black;
   width: 95%;
   height: 400px;
   display: flex;
@@ -68,13 +67,11 @@
 }
 
 .ringover-fields {
-  border: solid 2px rgb(218, 67, 67);
   width: 50%;
   height: 400px;
 }
 
 .salesforce-fields {
-  border: solid 2px rgb(24, 162, 77);
   width: 50%;
   height: 400px;
 }
@@ -87,7 +84,7 @@
 }
 
 .list-item {
-  padding-top: 4%;
+  padding-top: 12px;
 }
 
 .rf-filed {
@@ -96,10 +93,12 @@
   justify-content: center;
   background-color: white;
   border-radius: 8px;
-  height: 19px;
+  height: 22px;
   padding: 10px;
   margin: 0 auto;
   margin-top: 2%;
+  width: 188px;
+  padding: 8px;
 }
 .rf-filed p {
   margin: 0;
@@ -117,11 +116,13 @@
   justify-content: center;
   background: rgba(91, 107, 225, 0.15);
   border-radius: 8px;
-  height: 19px;
+  height: 22px;
   padding: 10px;
   background-color: res;
   margin: 0 auto;
   margin-top: 2%;
+  width: 188px;
+  padding: 8px;
 }
 .rf-filed-new p {
   margin: 0;
@@ -134,7 +135,6 @@
 }
 
 .sf-fields {
-  border: solid 2px rgb(218, 67, 67);
   width: 100%;
   height: 400px;
 }

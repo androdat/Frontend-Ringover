@@ -71,4 +71,19 @@
   font-size: 11px;
   color: #394759;
   margin-left: 1%;
+}
+
+.quickview-img {
+  width: 400px;
+}
+
+.qv-hover > * {
+  filter: blur(2px) !important;
+}
+
+.grow {
+  transform: scale(2.1) !important;
+  z-index: 10 !important;
+  opacity: 1 !important;
+  filter: blur(0) !important;
 }/*# sourceMappingURL=quickview.css.map */
