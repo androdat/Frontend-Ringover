@@ -7,6 +7,7 @@
   box-shadow: 2px 2px 40px rgba(0, 35, 35, 0.05);
   -webkit-backdrop-filter: blur(30px);
           backdrop-filter: blur(30px);
+  position: relative;
 }
 
 .static-buttons {
@@ -60,7 +61,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 4%;
+  width: 120px;
 }
 .text p {
   margin: 0;
@@ -73,17 +74,204 @@
   margin-left: 1%;
 }
 
-.quickview-img {
-  width: 400px;
-}
-
 .qv-hover > * {
-  filter: blur(2px) !important;
+  filter: blur(2px);
+  z-index: 1 !important;
 }
 
 .grow {
-  transform: scale(2.1) !important;
+  transform: scale(2.2) !important;
   z-index: 10 !important;
   opacity: 1 !important;
   filter: blur(0) !important;
+}
+
+#abs-1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#Linkedin\ URL {
+  position: absolute;
+  top: 14%;
+  left: 41%;
+  transform: translate(-50%, -50%);
+}
+
+#Linkedin\ URL:hover {
+  transform: scale(2.2) !important;
+  z-index: 10 !important;
+  opacity: 1 !important;
+  filter: blur(0) !important;
+}
+
+#Company\ URL {
+  position: absolute;
+  top: 14%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+}
+
+#Company\ URL:hover {
+  transform: scale(2.2) !important;
+  z-index: 10 !important;
+  opacity: 1 !important;
+  filter: blur(0) !important;
+}
+
+#First\ Name {
+  position: absolute;
+  top: 18%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+}
+
+#First\ Name:hover {
+  transform: scale(2.2) !important;
+  z-index: 10 !important;
+  opacity: 1 !important;
+  filter: blur(0) !important;
+}
+
+#Last\ Name {
+  position: absolute;
+  top: 18%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+}
+
+#Last\ Name:hover {
+  transform: scale(2.2) !important;
+  z-index: 10 !important;
+  opacity: 1 !important;
+  filter: blur(0) !important;
+}
+
+#globe {
+  position: absolute;
+  top: 20.5%;
+  left: 67%;
+  transform: translate(-50%, -50%);
+}
+
+#bag {
+  position: absolute;
+  top: 25%;
+  left: 7%;
+  transform: translate(-50%, -50%);
+}
+
+#Job\ Position {
+  position: absolute;
+  top: 25%;
+  left: 18%;
+  transform: translate(-50%, -50%);
+}
+
+#Job\ Position:hover {
+  transform: scale(2.2) !important;
+  z-index: 10 !important;
+  opacity: 1 !important;
+  filter: blur(0) !important;
+}
+
+#at {
+  position: absolute;
+  top: 25%;
+  left: 28%;
+  transform: translate(-50%, -50%);
+}
+
+#Account\ Name {
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+
+#Account\ Name:hover {
+  transform: scale(2.2) !important;
+  z-index: 10 !important;
+  opacity: 1 !important;
+  filter: blur(0) !important;
+}
+
+#with {
+  position: absolute;
+  top: 25%;
+  left: 53%;
+  transform: translate(-50%, -50%);
+}
+
+#Employee\ Number {
+  position: absolute;
+  top: 25%;
+  left: 69%;
+  transform: translate(-50%, -50%);
+}
+
+#Employee\ Number:hover {
+  transform: scale(2.2) !important;
+  z-index: 10 !important;
+  opacity: 1 !important;
+  filter: blur(0) !important;
+}
+
+#employees {
+  position: absolute;
+  top: 25%;
+  left: 89%;
+  transform: translate(-50%, -50%);
+}
+
+#Primary\ Email\ Id {
+  position: absolute;
+  top: 29%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+}
+
+#Primary\ Email\ Id:hover {
+  transform: scale(2.5) !important;
+  z-index: 10 !important;
+  opacity: 1 !important;
+  filter: blur(0) !important;
+}
+
+#Primary\ Phone {
+  position: absolute;
+  top: 33%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+}
+
+#Primary\ Phone:hover {
+  transform: scale(2.5) !important;
+  z-index: 10 !important;
+  opacity: 1 !important;
+  filter: blur(0) !important;
+}
+
+#Company\ Phone {
+  position: absolute;
+  top: 37%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+}
+
+.quickview-img {
+  width: 400px;
+  position: absolute;
+  top: 68%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+}
+
+.small-font {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
 }/*# sourceMappingURL=quickview.css.map */

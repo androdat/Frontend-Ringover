@@ -8,6 +8,7 @@ function App() {
   const [leadsTotal, setLeadsTotal] = useState(0);
   const [leadsMatched, setLeadsMatched] = useState(0);
   const [highlightId, sethighlightId] = useState("");
+  const [highlightId2, sethighlightId2] = useState("xyz");
   return (
     <div className="App">
       <div className="grid-container">
@@ -19,6 +20,8 @@ function App() {
             setLeadsMatched,
             highlightId,
             sethighlightId,
+            highlightId2,
+            sethighlightId2,
           }}
         >
           <div className="grid-item grid-item-1">

@@ -110,6 +110,14 @@
   color: #5b6be1;
 }
 
+.rf-filed:hover {
+  background: rgba(91, 107, 225, 0.15) !important;
+}
+
+.forced-hoved {
+  background: rgba(91, 107, 225, 0.15);
+}
+
 .rf-filed-new {
   display: flex;
   align-items: center;

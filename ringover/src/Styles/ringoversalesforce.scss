@@ -8,7 +8,7 @@
   border: 0.612859px solid #e7ebff;
   border-radius: 15px;
   margin-left: 6%;
- // margin: 0 auto;
+  // margin: 0 auto;
   // margin-top: 4%;
 }
 .ringover {
@@ -50,7 +50,7 @@
 }
 
 .fields {
- // border: solid 2px black;
+  // border: solid 2px black;
   width: 95%;
   height: 400px;
   display: flex;
@@ -68,12 +68,12 @@
 }
 
 .ringover-fields {
- // border: solid 2px rgb(218, 67, 67);
+  // border: solid 2px rgb(218, 67, 67);
   width: 50%;
   height: 400px;
 }
 .salesforce-fields {
-//  border: solid 2px rgb(24, 162, 77);
+  //  border: solid 2px rgb(24, 162, 77);
   width: 50%;
   height: 400px;
 }
@@ -109,6 +109,12 @@
     color: #5b6be1;
   }
 }
+.rf-filed:hover {
+  background: rgba(91, 107, 225, 0.15) !important;
+}
+.forced-hoved {
+  background: rgba(91, 107, 225, 0.15);
+}
 
 .rf-filed-new {
   display: flex;
@@ -137,7 +143,7 @@
 }
 
 .sf-fields {
- // border: solid 2px rgb(218, 67, 67);
+  // border: solid 2px rgb(218, 67, 67);
   width: 100%;
   height: 400px;
 }

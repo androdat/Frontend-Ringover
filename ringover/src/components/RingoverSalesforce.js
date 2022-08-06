@@ -3,6 +3,7 @@ import { MyContext } from "../contexts/MyContext";
 import "../Styles/ringoversalesforce.css";
 import { IoSearchSharp, IoCloseCircle } from "react-icons/io5";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+var prevValue = "";
 var sfData = [
   { Name: "AccountType" },
   { Name: "AccountName" },
@@ -50,6 +51,7 @@ const RingoverSalesforce = () => {
   const { setLeadsTotal } = useContext(MyContext);
   const { setLeadsMatched } = useContext(MyContext);
   const { sethighlightId } = useContext(MyContext);
+  const { highlightId2 } = useContext(MyContext);
   const [fsvalue, setValue] = useState("");
   const [rcValue, setRcValue] = useState("");
   const fieldref = useRef(null);
@@ -61,6 +63,7 @@ const RingoverSalesforce = () => {
     setLeadsTotal(rfData.length);
     setLeadsMatched(getLeadsMatched());
     // groupNames(sfData)
+    highlight();
   });
   const data1 = rfData.filter((filter) => {
     return filter.Name.toLowerCase().indexOf(rcValue.toLowerCase()) >= 0;
@@ -454,6 +457,78 @@ const RingoverSalesforce = () => {
     console.log(count);
     return count;
   };
+  const highlight = () => {
+    if (highlightId2 == "xyz") return;
+    console.log("===========Highlight==============");
+    console.log({ highlightId2 });
+    if (highlightId2 != "") {
+      if (prevValue == "") {
+        prevValue = highlightId2;
+        if (document.getElementById(highlightId2 + 1)) {
+          document.getElementById(highlightId2 + 1).style.background =
+            "rgba(91, 107, 225, 0.15)";
+          document.getElementById(highlightId2 + 1).scrollIntoView();
+        }
+
+        return;
+      }
+      if (prevValue != "") {
+        console.log(prevValue + "isko whitekrdo");
+        if (document.getElementById(highlightId2 + 1)) {
+          document.getElementById(highlightId2 + 1).style.background =
+            "rgba(91, 107, 225, 0.15)";
+          document.getElementById(highlightId2 + 1).scrollIntoView();
+        }
+
+        if (prevValue != highlightId2) {
+          if (document.getElementById(prevValue + 1)) {
+            document.getElementById(prevValue + 1).style.background = "white";
+          }
+        }
+      }
+
+      //   console.log("***************************************");
+      //   console.log("toggle");
+      //   document.getElementById("qv").classList.toggle("qv-hover");
+      //   id = highlightId2;
+      //    console.log(document.getElementById(highlightId2+1));
+
+      //   document.getElementById(highlightId2 + 1).style.background =
+      //     "rgba(91, 107, 225, 0.15)";
+      //   document.getElementById(highlightId2 + 1).scrollIntoView();
+
+      //   document.getElementById(highlightId).classList.toggle("grow");
+    }
+
+    if (highlightId2 == "") {
+      console.log("sabko white krdo");
+
+      var array = document.getElementsByClassName("rf-filed");
+
+      for (var i = 0; i < array.length; i++) {
+        array[i].style.background = "white";
+      }
+    }
+    // if (highlightId2 == "revert") {
+    //     console.log("revert")
+    //   //   document.getElementById("qv").classList.toggle("qv-hover");
+    //   //   document.getElementById(id).classList.toggle("grow");
+    //   //   console.log(id);
+    //   //  console.log({id})
+    //   //console.log(document.getElementById(id+1))
+    //   if (document.getElementById(id + 1)) {
+    //     document.getElementById(id + 1).style.background = "white";
+    //   }
+    // }
+    // if (highlightId == "revert") {
+    //   console.log("revert");
+    //   const elem = document.getElementById("qv");
+    //   const list = elem.classList;
+    //   list.remove("qv-hover");
+    //   console.log(globalelem)
+    //   // myelement.remove("grow");
+    // }
+  };
   const getOriginalIndex = (index) => {};
   const getIndexFromArray = (n) => {
     // console.log(n);
@@ -530,6 +605,7 @@ const RingoverSalesforce = () => {
                         }
                         onMouseLeave={(e) => sethighlightId("revert")}
                         className="rf-filed"
+                        id={d.Name + 1}
                       >
                         <p>{d.Name}</p>
                       </div>

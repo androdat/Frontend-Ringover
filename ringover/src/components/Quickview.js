@@ -12,29 +12,34 @@ import {
   IoMail,
   IoPhonePortrait,
   IoBagRemoveSharp,
+  IoPhonePortraitOutline,
 } from "react-icons/io5";
 var id = "";
+var value = "";
 const Quickview = () => {
   const { highlightId } = useContext(MyContext);
+  const { sethighlightId2 } = useContext(MyContext);
+  const { highlightId2 } = useContext(MyContext);
   useEffect(() => {
-    console.log("Use Effect called from quickview");
+    // console.log("Use Effect called from quickview");
     //  document.getElementById(highlightId).style.display = "none";
     highlight();
   });
 
   const highlight = () => {
-    console.log("highlight called9999999");
+    // console.log("highlight called9999999");
 
     if (highlightId != "" && highlightId != "revert") {
       console.log("***************************************");
       console.log("toggle");
-      document.getElementById("qv").classList.toggle("qv-hover");
+      document.getElementById("qv").classList.add("qv-hover");
       id = highlightId;
-         document.getElementById(highlightId).classList.toggle("grow");
+      console.log(document.getElementById(highlightId));
+      document.getElementById(highlightId).classList.add("grow");
     }
     if (highlightId == "revert") {
-      document.getElementById("qv").classList.toggle("qv-hover");
-       document.getElementById(id).classList.toggle("grow");
+      document.getElementById("qv").classList.remove("qv-hover");
+      document.getElementById(id).classList.remove("grow");
       console.log(id);
     }
     // if (highlightId == "revert") {
@@ -46,9 +51,45 @@ const Quickview = () => {
     //   // myelement.remove("grow");
     // }
   };
+
+  const onHoverStart = (e) => {
+    console.log("------onHoverStart-----")
+    console.log({highlightId2})
+    // if (highlightId2 != "revert" && highlightId2 != "") {
+    //   sethighlightId2("revert");
+    // }
+    // if (highlightId2 != "revert" && highlightId2 != "") {
+    //   // if (value != "") {
+    //   //   sethighlightId2(value);
+    //   //   return;
+    //   // }
+
+    //   // console.log("saved value = ", { value });
+    //   // sethighlightId2("revert");
+    //   // return;
+    //   console.log("<<<<<<REVERT NOT SET>>>>>>");
+    //   value = e.target.id;
+    //   revertHandler();
+    //   return;
+    // }
+    document.getElementById("qv").classList.toggle("qv-hover");
+
+    sethighlightId2(e.target.id);
+  };
+  const onHoverEnd = () => {
+    // console.log("------onHoverEnd-----")
+    document.getElementById("qv").classList.toggle("qv-hover");
+     sethighlightId2("");
+  };
+
+  const revertHandler = () => {
+    console.log("=====HANDLING REVERT=====");
+    console.log({ value });
+    console.log(highlightId2);
+    sethighlightId2("revert");
+  };
   return (
     <div id="qv" className="quickview">
-      {highlightId}
       <div className="static-buttons-parents">
         <div className="static-buttons">
           <p>Status</p>
@@ -63,27 +104,95 @@ const Quickview = () => {
           <IoPencilOutline size={12} color="#567191" />
         </div>
       </div>
-      <div className="social-icons-parent">
-        <IoLogoLinkedin id="Linkedin URL" size={32} color="#0077B7" />
-        <IoLinkSharp size={32} color="#567191" />
-      </div>
-      <div className="text">
-        <p className="bolder">First_name Last_name</p>
-        <IoGlobeOutline size={12} color="#567191" />
-      </div>
-      <div className="text">
-        <IoBagRemoveSharp size={12} color="#567191" />
-        <p>job_position at account_name with employee_number employees</p>
-      </div>
-      <div className="text">
+      <IoLogoLinkedin
+        onMouseEnter={(e) => onHoverStart(e)}
+        onMouseLeave={() => onHoverEnd()}
+        id="Linkedin URL"
+        size={32}
+        color="#0077B7"
+      />
+      <IoLinkSharp
+        onMouseEnter={(e) => onHoverStart(e)}
+        onMouseLeave={() => onHoverEnd()}
+        id="Company URL"
+        size={32}
+        color="#567191"
+      />
+      <p
+        onMouseEnter={(e) => onHoverStart(e)}
+        onMouseLeave={() => onHoverEnd()}
+        className="bolder"
+        id="First Name"
+      >
+        First_name
+      </p>
+      <p
+        onMouseEnter={(e) => onHoverStart(e)}
+        onMouseLeave={() => onHoverEnd()}
+        className="bolder"
+        id="Last Name"
+      >
+        Last_name
+      </p>
+      <IoGlobeOutline id="globe" size={12} color="#567191" />
+      <IoBagRemoveSharp id="bag" size={12} color="#567191" />
+      <span
+        onMouseEnter={(e) => onHoverStart(e)}
+        onMouseLeave={() => onHoverEnd()}
+        className="small-font"
+        id="Job Position"
+      >
+        job_position
+      </span>{" "}
+      <span className="small-font" id="at">
+        at
+      </span>
+      <span
+        onMouseEnter={(e) => onHoverStart(e)}
+        onMouseLeave={() => onHoverEnd()}
+        className="small-font"
+        id="Account Name"
+      >
+        account_name
+      </span>{" "}
+      <span className="small-font" id="with">
+        with
+      </span>
+      <span
+        onMouseEnter={(e) => onHoverStart(e)}
+        onMouseLeave={() => onHoverEnd()}
+        className="small-font"
+        id="Employee Number"
+      >
+        employee_number
+      </span>{" "}
+      <span className="small-font" id="employees">
+        employees
+      </span>
+      <div
+        onMouseEnter={(e) => onHoverStart(e)}
+        onMouseLeave={() => onHoverEnd()}
+        id="Primary Email Id"
+        className="text"
+      >
         <IoMail size={12} color="#567191" />
-        <p>primary_email_id (4)</p>
+        <p>
+          <span>primary_email_id</span> (4)
+        </p>
       </div>
-      <div className="text">
+      <div
+        onMouseEnter={(e) => onHoverStart(e)}
+        onMouseLeave={() => onHoverEnd()}
+        id="Primary Phone"
+        className="text"
+      >
         <IoPhonePortrait size={12} color="#567191" />
         <p>primary_phone</p>
       </div>
-
+      <div id="Company Phone" className="text">
+        <IoPhonePortraitOutline size={12} color="#567191" />
+        <p>company_phone</p>
+      </div>
       <img className="quickview-img" src={quickview} />
     </div>
   );
