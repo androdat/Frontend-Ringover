@@ -1,5 +1,5 @@
-  /* eslint-disable */
-import React from "react";
+/* eslint-disable */
+import React, { useEffect } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { IoSearchSharp, IoCloseCircle } from "react-icons/io5";
 const Salesforce = ({
@@ -10,6 +10,13 @@ const Salesforce = ({
   newsfData,
   groupNames,
 }) => {
+  useEffect(() => {
+    getNewFsDataLength() == 0 ? groupNames(sfData) : null;
+  });
+
+  const getNewFsDataLength = () => {
+    return newsfData.length;
+  };
   return (
     <div className="salesforce">
       <div className="heading-txt">
@@ -40,7 +47,6 @@ const Salesforce = ({
       <div className="fields">
         <div className="sf-fields">
           <ul className="list">
-            {newsfData.length == 0 ? groupNames(sfData) : null}
             {newsfData
               .filter((filter) => {
                 return (

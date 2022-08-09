@@ -1,4 +1,4 @@
-  /* eslint-disable */
+/* eslint-disable */
 import React from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { IoSearchSharp, IoCloseCircle } from "react-icons/io5";

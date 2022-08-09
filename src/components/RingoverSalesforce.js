@@ -91,12 +91,7 @@ const RingoverSalesforce = () => {
     setDisabledFields(rfData);
     highlight();
     performRevertActionsCaller();
-    lsSetItem();
   });
-
-  useEffect(() => {
-    lsGetItem();
-  }, []);
 
   const performActions = () => {
     if (spControllVariable == true) {
@@ -345,25 +340,6 @@ const RingoverSalesforce = () => {
       revertActions();
     }
   };
-  const lsSetItem = () => {
-    var sum = 0;
-    rfData.map((item, index) => {
-      sum = sum + item.MF.length;
-    });
-    if (sum == 0) return;
-    //persisting state only for first page
-    if (rfData.length == 9) {
-      localStorage.setItem("rfData", JSON.stringify(rfData));
-      console.log("set called");
-    }
-  };
-  const lsGetItem = () => {
-    const items = JSON.parse(localStorage.getItem("rfData"));
-    if (items) {
-      rfData = items;
-      console.log(items);
-    }
-  };
 
   return (
     <DragDropContext onDragEnd={(result) => onDragEnd(result)}>
@@ -383,100 +359,14 @@ const RingoverSalesforce = () => {
           endDelete={endDelete}
           fieldref={fieldref}
         />
-        <div className="salesforce">
-          <div className="heading-txt">
-            <p>Salesforce </p>
-            <div className="count">
-              <p>{sfTotal}</p>
-            </div>
-          </div>
-          <div className="search-bar">
-            <IoSearchSharp className="search-icon" size={14} color="#567191" />
-            <input
-              // ref={inputElt}
-              value={fsvalue}
-              onChange={(e) => setValue(e.target.value)}
-              className="input"
-              placeholder="Search"
-            />
-            {fsvalue && (
-              <IoCloseCircle
-                className="delete-icon display"
-                size={14}
-                color="#5b6be1"
-                onClick={() => setValue("")}
-              />
-            )}
-          </div>
-
-          <div className="fields">
-            <div className="sf-fields">
-              <ul className="list">
-                {newsfData.length == 0 ? groupNames(sfData) : null}
-                {newsfData
-                  .filter((filter) => {
-                    return (
-                      filter.letter
-                        .toLowerCase()
-                        .indexOf(fsvalue.charAt(0).toLowerCase()) >= 0
-                    );
-                  })
-
-                  .map((t, pindex) => (
-                    <Droppable droppableId={`${pindex}`} key={pindex}>
-                      {(provided, snapshot) => {
-                        return (
-                          <div
-                            {...provided.droppableProps}
-                            ref={provided.innerRef}
-                            className="wd"
-                          >
-                            <p className="lettering">{t.letter}</p>
-
-                            {t.names
-                              .filter((filter) => {
-                                return (
-                                  filter
-                                    .toLowerCase()
-                                    .indexOf(fsvalue.toLowerCase()) >= 0
-                                );
-                              })
-                              .map((n, index) => (
-                                <Draggable
-                                  key={index}
-                                  draggableId={`right-${pindex.toString()}-${index.toString()}`}
-                                  index={index}
-                                >
-                                  {(provided, snapshot) => {
-                                    return (
-                                      <li
-                                        ref={provided.innerRef}
-                                        {...provided.draggableProps}
-                                        {...provided.dragHandleProps}
-                                        style={{
-                                          ...provided.draggableProps.style,
-                                        }}
-                                        className="list-item"
-                                        key={index}
-                                      >
-                                        <div className="sf-filed">
-                                          <p>{n}</p>
-                                        </div>
-                                      </li>
-                                    );
-                                  }}
-                                </Draggable>
-                              ))}
-                            {provided.placeholder}
-                          </div>
-                        );
-                      }}
-                    </Droppable>
-                  ))}
-              </ul>
-            </div>
-          </div>
-        </div>
+        <Salesforce
+          sfTotal={sfTotal}
+          fsvalue={fsvalue}
+          setValue={setValue}
+          sfData={sfData}
+          newsfData={newsfData}
+          groupNames={groupNames}
+        />
       </div>
     </DragDropContext>
   );
