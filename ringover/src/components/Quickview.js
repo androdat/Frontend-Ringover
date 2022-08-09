@@ -1,3 +1,4 @@
+  /* eslint-disable */
 import React, { useState, useEffect, useContext } from "react";
 import { MyContext } from "../contexts/MyContext";
 import "../Styles/quickview.css";
@@ -208,55 +209,3 @@ const QuickView = () => {
 
 export default QuickView;
 
-// const highlight = () => {
-//   if (highlightId != "" && highlightId != "revert") {
-//     if (document.getElementById("qv")) {
-//       document.getElementById("qv").classList.add("qv-hover");
-//     }
-//     if (document.getElementById(highlightId)) {
-//       document.getElementById(highlightId).classList.add("grow");
-//     }
-//   }
-//   if (highlightId == "revert") {
-//     const growElement = document.querySelectorAll(".grow");
-//     growElement.forEach((element) => {
-//       element.classList.remove("grow");
-//     });
-//     if (document.getElementById("qv")) {
-//       document.getElementById("qv").classList.remove("qv-hover");
-//     }
-//   }
-// };
-
-// const onHoverStart = (e) => {
-//   //  debugger;
-//   if (onHoverTracker == 1) {
-//     setOnHoverTracker(0);
-//     sethighlightId2("");
-//     document.getElementById("qv").classList.remove("qv-hover");
-//   }
-//   setOnHoverTracker(1);
-//   console.log("------onHoverStart-----");
-//   console.log({ highlightId2 });
-//   sethighlightId2(e.target.id);
-//   // if (highlightId2 != "revert" && highlightId2 != "") {
-//   //   sethighlightId2("revert");
-//   // }
-//   // if (highlightId2 != "revert" && highlightId2 != "") {
-//   //   // if (value != "") {
-//   //   //   sethighlightId2(value);
-//   //   //   return;
-//   //   // }
-
-//   //   // console.log("saved value = ", { value });
-//   //   // sethighlightId2("revert");
-//   //   // return;
-//   //   console.log("<<<<<<REVERT NOT SET>>>>>>");
-//   //   value = e.target.id;
-//   //   revertHandler();
-//   //   return;
-//   // }
-//   console.log(e.target.classList.contains("enable"));
-//   if (e.target.classList.contains("enable"))
-//     document.getElementById("qv").classList.add("qv-hover");
-// };

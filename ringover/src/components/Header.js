@@ -1,3 +1,4 @@
+  /* eslint-disable */
 import React, { useContext } from "react";
 import { MyContext } from "../contexts/MyContext";
 import "../Styles/header.css";
@@ -77,21 +78,3 @@ const Header = () => {
 
 export default Header;
 
-// if (showAcView != false) {
-//   if (contactClickedState == true) {
-//     setSpControllVariable(true);
-//     setShowAcView(true);
-//   } else {
-//     setSpControllVariable(false);
-//     setShowAcView(false);
-//     setPerformedAction("");
-//     setRevertAction("");
-//   }
-// }
-
-// if (showAcView != true) {
-//   setSpControllVariable(false);
-//   setShowAcView(true);
-//   setPerformedAction("");
-//   setRevertAction("");
-// }

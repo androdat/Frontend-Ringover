@@ -1,3 +1,4 @@
+  /* eslint-disable */
 import React, { useContext } from "react";
 import { MyContext } from "../contexts/MyContext";
 import "../Styles/tabmenu.css";
@@ -29,12 +30,4 @@ const TabMenu = ({ contactClicked, accountClicked }) => {
 
 export default TabMenu;
 
-// if (acTab != false) {
-//   setAcTab(false);
-//   accountClicked();
-// }
 
-// if (acTab != true) {
-//   setAcTab(true);
-//   contactClicked();
-// }

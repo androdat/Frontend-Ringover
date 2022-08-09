@@ -334,18 +334,16 @@ const RingoverSalesforce = () => {
   };
   const performRevertActionsCaller = () => {
     if (showAcView == true) {
-      console.log("Perform Actions");
       performActions();
     }
     if (showAcView == false) {
-      console.log("Revert Actions");
       revertActions();
     }
   };
   const calcIndex = (pindex, index) => {
     var elemToFind = data2[pindex].names[index];
     var originalIndex;
-    console.log(elemToFind);
+
     newsfData.map((item, index) => {
       item.names.map((elem, innerindex) => {
         if (elem == elemToFind) {
@@ -353,7 +351,7 @@ const RingoverSalesforce = () => {
         }
       });
     });
-    console.log(originalIndex);
+
     return originalIndex;
   };
 
