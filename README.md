@@ -1,7 +1,6 @@
 # Frontend-Ringover
 
-npm install --legacy-peer-deps or 
-npm install --force
-(downgraged to React 17)
-
+npm install 
 npm start
+
+Link: https://62f281d4dfc95c0dca64a390--dapper-clafoutis-c7cd2f.netlify.app/
