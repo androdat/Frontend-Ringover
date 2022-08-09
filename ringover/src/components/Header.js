@@ -1,4 +1,4 @@
-import React, { useState,useContext } from "react";
+import React, { useContext } from "react";
 import { MyContext } from "../contexts/MyContext";
 import "../Styles/header.css";
 import mf from "../images/mf.png";
@@ -7,9 +7,33 @@ import aac from "../images/aac.png";
 import cs from "../images/cs.png";
 
 const Header = () => {
-  const {leadsTotal} = useContext(MyContext)
-  const {leadsMatched} = useContext(MyContext)
-  var string1 = `(${leadsMatched}/${leadsTotal} fields matched)`
+  const { leadsTotal } = useContext(MyContext);
+  const { leadsMatched } = useContext(MyContext);
+  const { showAcView, setShowAcView } = useContext(MyContext);
+  const { setPerformedAction } = useContext(MyContext);
+  const { setRevertAction } = useContext(MyContext);
+  const { setSpControllVariable } = useContext(MyContext);
+  const { contactClickedState } = useContext(MyContext);
+  var string1 = `(${leadsMatched}/${leadsTotal} fields matched)`;
+  const leadsOnClickHandler = () => {
+    if (showAcView == false) return;
+    if (contactClickedState == true) {
+      setSpControllVariable(true);
+      setShowAcView(true);
+    } else {
+      setSpControllVariable(false);
+      setShowAcView(false);
+      setPerformedAction("");
+      setRevertAction("");
+    }
+  };
+  const accountsAndContactsOnClickHandler = () => {
+    if (showAcView == true) return;
+    setSpControllVariable(false);
+    setShowAcView(true);
+    setPerformedAction("");
+    setRevertAction("");
+  };
   return (
     <div className="parent">
       <div className="header-txt">
@@ -22,9 +46,8 @@ const Header = () => {
           fields.
         </p>
       </div>
-
       <div className="button-parent">
-        <div className="button">
+        <div onClick={leadsOnClickHandler} className="button">
           <img src={leads} />
           <div>
             <p>Leads</p>
@@ -32,11 +55,11 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="button">
+        <div onClick={accountsAndContactsOnClickHandler} className="button">
           <img src={aac} />
           <div>
-            <p>Account and contacts</p>
-            <p className="small">(0/25 fields matched)</p>
+            <p>Accounts and Contacts</p>
+            <p className="small">{string1}</p>
           </div>
         </div>
 
@@ -53,3 +76,22 @@ const Header = () => {
 };
 
 export default Header;
+
+// if (showAcView != false) {
+//   if (contactClickedState == true) {
+//     setSpControllVariable(true);
+//     setShowAcView(true);
+//   } else {
+//     setSpControllVariable(false);
+//     setShowAcView(false);
+//     setPerformedAction("");
+//     setRevertAction("");
+//   }
+// }
+
+// if (showAcView != true) {
+//   setSpControllVariable(false);
+//   setShowAcView(true);
+//   setPerformedAction("");
+//   setRevertAction("");
+// }
