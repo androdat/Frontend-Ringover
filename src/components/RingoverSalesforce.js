@@ -91,7 +91,12 @@ const RingoverSalesforce = () => {
     setDisabledFields(rfData);
     highlight();
     performRevertActionsCaller();
+    lsSetItem();
   });
+
+  useEffect(() => {
+    lsGetItem();
+  }, []);
 
   const performActions = () => {
     if (spControllVariable == true) {
@@ -340,19 +345,24 @@ const RingoverSalesforce = () => {
       revertActions();
     }
   };
-  const calcIndex = (pindex, index) => {
-    var elemToFind = data2[pindex].names[index];
-    var originalIndex;
-
-    newsfData.map((item, index) => {
-      item.names.map((elem, innerindex) => {
-        if (elem == elemToFind) {
-          originalIndex = innerindex;
-        }
-      });
+  const lsSetItem = () => {
+    var sum = 0;
+    rfData.map((item, index) => {
+      sum = sum + item.MF.length;
     });
-
-    return originalIndex;
+    if (sum == 0) return;
+    //persisting state only for first page
+    if (rfData.length == 9) {
+      localStorage.setItem("rfData", JSON.stringify(rfData));
+      console.log("set called");
+    }
+  };
+  const lsGetItem = () => {
+    const items = JSON.parse(localStorage.getItem("rfData"));
+    if (items) {
+      rfData = items;
+      console.log(items);
+    }
   };
 
   return (
