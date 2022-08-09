@@ -1,3 +1,7 @@
 # Frontend-Ringover
 
-njsd
+npm install --legacy-peer-deps
+npm install --force
+(downgraged to React 17)
+
+npm start
